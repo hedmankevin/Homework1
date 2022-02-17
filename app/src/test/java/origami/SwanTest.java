@@ -21,8 +21,8 @@ public class SwanTest {
     @Test
     public void make() {
 
-        assertEquals(defSwan.getStep(), 0);
-        assertEquals(defSwan.getMaterial(), "paper unfolded");
+        assertEquals(0, defSwan.getStep());
+        assertEquals( "paper unfolded",defSwan.getMaterial());
         assertEquals(defSwan.getHeight(), Swan.default_length, 0.00001);
         assertEquals(defSwan.getWidth(), Swan.default_width, 0.00001);
 
@@ -74,6 +74,18 @@ public class SwanTest {
 
     @Test
     public void directions() {
+        String [] expected = new String [] {
+                "get the paper",
+                "fold it up",
+                "fold it more",
+                " look it up"
+        };
+        for (int step = 0; step < Swan.STEPS; ++step){
+            String expect = expected[step < 3 ? step : 3];
+            assertEquals(expect, defSwan.directions());
+            defSwan.advance();
+        }
+
     }
 
     @Test

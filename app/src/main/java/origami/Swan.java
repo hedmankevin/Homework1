@@ -15,15 +15,9 @@ public class Swan {
 
     // public static final Swan default_swan = new Swan(); // danger - swan is mutable - changeable
 
-    public static double areaOfCircle(double radius)
-    {
-        return Math.PI*Math.pow(radius, 2);
-    }
 
-    public static double areaOfRectangle(double height, double width)
-    {
-        return height * width;
-    }
+
+    //public static double areaOfRectangle(double height, double width) {return height * width; }
 
     //public static final double areaOfRectangle(default_height, default_width);
 
@@ -72,7 +66,7 @@ public class Swan {
             ++step;
     }
 
-    String directions()
+    public String directions()
     {
         switch(step)
         {
